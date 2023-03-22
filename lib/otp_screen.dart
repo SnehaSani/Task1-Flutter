@@ -1,0 +1,233 @@
+import 'package:flutter/material.dart';
+import 'package:task1/home_screen.dart';
+import 'package:task1/login_screen.dart';
+
+class OtpScreen extends StatelessWidget {
+  const OtpScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: TweenAnimationBuilder(
+        tween: Tween<double>(begin: 0, end: 1),
+        duration: Duration(seconds: 1),
+        builder: (context,double value, child) {
+          return Opacity(
+            opacity: value,
+            child: child,
+          );
+        },
+
+        child: Container(
+          // width: MediaQuery.of(context).size.width,
+          // height: MediaQuery.of(context).size.height,
+          width: 430,
+          height: 932,
+          //color: Colors.blue,
+          color: Color(0xFFEDFFF4),
+          child: Stack(
+            children: [
+              Container(
+                width: 50,
+                height: 50,
+                margin: EdgeInsets.only(left: 25, top: 20),
+                decoration: BoxDecoration(
+                  color: Color(0xFFEDFFF4),
+                  border: Border.all(color: Color.fromRGBO(36, 211, 181, 0.25), width: 1),
+                  shape: BoxShape.circle,
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => Login()));
+                  },
+                  child: Text(
+                    '<',
+                    style: TextStyle(
+                      fontFamily: 'Sk-Modernist',
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 24,
+                      height: 1.28,
+                      color: Color(0xFF24D3B5),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 123, top: 110),
+                width: 184,
+                height: 76,
+                child: Image.asset('bankly-logo.png'),
+              ),
+              Container(
+                width: 366,
+                height: 58,
+                margin: EdgeInsets.only(left: 25, top: 250),
+                child: Text(
+                  'Enter the otp to verify your phone Number',
+                  style: TextStyle(
+                    fontFamily: 'Sk-Modernist',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 24,
+                    height: 1, // line-height equivalent
+                    color: Color(0xFF636F8C),
+                  ),
+                  textAlign: TextAlign.left, // text-align equivalent
+                ),
+              ),
+              Container(
+                width: 380,
+                height: 19,
+                margin: EdgeInsets.only(left: 25, top: 313),
+                child: Row(
+                  children: [
+                    Text(
+                      'OTP sent to +91 00000 0000',
+                      style: TextStyle(
+                        fontFamily: 'Sk-Modernist',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16, // line-height equivalent
+                        color: Color(0xFF636F8C),
+                      ),
+                      textAlign: TextAlign.left, // text-align equivalent
+                    ),
+                    Text(
+                      ' edit',
+                      style: TextStyle(
+                        fontFamily: 'Sk-Modernist',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12, // line-height equivalent
+                        color: Color(0xFF24D3B5),
+                        decoration: TextDecoration.underline,
+                      ),
+                      textAlign: TextAlign.left, // text-align equivalent
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 75,
+                height: 75,
+                margin: EdgeInsets.only(left: 25, top: 372),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(144, 158, 192, 0.2),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromRGBO(144, 158, 192, 0.1),
+                      blurRadius: 20,
+                      offset: Offset(0, 4),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 75,
+                height: 75,
+                margin: EdgeInsets.only(left: 110, top: 372),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(144, 158, 192, 0.2),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromRGBO(144, 158, 192, 0.1),
+                      blurRadius: 20,
+                      offset: Offset(0, 4),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 75,
+                height: 75,
+                margin: EdgeInsets.only(left: 195, top: 372),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(144, 158, 192, 0.2),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromRGBO(144, 158, 192, 0.1),
+                      blurRadius: 20,
+                      offset: Offset(0, 4),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 75,
+                height: 75,
+                margin: EdgeInsets.only(left: 280, top: 372),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(144, 158, 192, 0.2),
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromRGBO(144, 158, 192, 0.1),
+                      blurRadius: 20,
+                      offset: Offset(0, 4),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 123,
+                height: 19,
+                margin: EdgeInsets.only(left: 25, top: 869),
+                child: Text(
+                  'Resend OTP 34s',
+                  style: TextStyle(
+                    fontFamily: 'Sk-Modernist',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                    height: 19 / 16,
+                    decoration: TextDecoration.underline,
+                    color: Color(0xFF636F8C),
+                  ),
+                ),
+              ),
+
+
+        Hero(
+          tag: 'next',
+          child: Container(
+                  width: 66,
+                  height: 56,
+                  margin: EdgeInsets.only(left: 339, top: 832),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF24D3B5),
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(36, 211, 181, 0.2),
+                        offset: Offset(0, 10),
+                        blurRadius: 30,
+                      ),
+                    ],
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                    },
+                    child: Text(
+                      '>',
+                      style: TextStyle(
+                        fontFamily: 'Sk-Modernist',
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        height: 1.28,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+
+        ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
